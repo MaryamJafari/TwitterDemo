@@ -116,7 +116,11 @@
             "Tweets",
             "Timeline",
             "Search",
-            "Friends"});
+            "Friends",
+            "Suggestions",
+            "Configuration",
+            "Languages",
+            "Privacy"});
             this.endpointsComboBox.Location = new System.Drawing.Point(150, 42);
             this.endpointsComboBox.Name = "endpointsComboBox";
             this.endpointsComboBox.Size = new System.Drawing.Size(319, 33);

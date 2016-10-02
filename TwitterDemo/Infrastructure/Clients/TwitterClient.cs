@@ -1,4 +1,5 @@
-﻿using RestSharp;
+﻿using System;
+using RestSharp;
 
 namespace TwitterDemo.Infrastructure.Clients
 {
@@ -8,6 +9,10 @@ namespace TwitterDemo.Infrastructure.Clients
         private const string FRIENDS_RESOURCE = "twitter/friends/{screenName}";
         private const string SEARCH_RESOURCE = "/twitter/users/search/{q}";
         private const string TWEETS_RESOURCE = "/twitter/tweets/{q}";
+        private const string SUGGESTIONS_RESOURCE = "";
+        private const string PRIVACY_RESOURCE = "";
+        private const string CONFIGURATION_RESOURCE = "";
+        private const string LANGUAGES_RESOURCE = "";
 
         private readonly IRestClient restClient;
 
@@ -44,6 +49,34 @@ namespace TwitterDemo.Infrastructure.Clients
         {
             var request = new RestRequest(USER_TIMELINE_RESOURCE, Method.GET)
                 .AddUrlSegment("screenName", screenName);
+            var response = restClient.Execute(request);
+            return response.Content;
+        }
+
+        public string Languages()
+        {
+            var request = new RestRequest(LANGUAGES_RESOURCE, Method.GET);
+            var response = restClient.Execute(request);
+            return response.Content;
+        }
+
+        public string Privacy()
+        {
+            var request = new RestRequest(PRIVACY_RESOURCE, Method.GET);
+            var response = restClient.Execute(request);
+            return response.Content;
+        }
+
+        public string Configuration()
+        {
+            var request = new RestRequest(CONFIGURATION_RESOURCE, Method.GET);
+            var response = restClient.Execute(request);
+            return response.Content;
+        }
+
+        public string Suggestions()
+        {
+            var request = new RestRequest(SUGGESTIONS_RESOURCE, Method.GET);
             var response = restClient.Execute(request);
             return response.Content;
         }

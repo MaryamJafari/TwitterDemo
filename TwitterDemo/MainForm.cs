@@ -36,6 +36,18 @@ namespace TwitterDemo
                 case "search":
                     response = twitterClient.Search(parameter);
                     break;
+                case "languages":
+                    response = twitterClient.Languages();
+                    break;
+                case "suggestions":
+                    response = twitterClient.Suggestions();
+                    break;
+                case "configuration":
+                    response = twitterClient.Configuration();
+                    break;
+                case "privacy":
+                    response = twitterClient.Privacy();
+                    break;
                 default:
                     response = "No Result";
                     break;
